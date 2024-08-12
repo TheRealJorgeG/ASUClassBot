@@ -3,6 +3,7 @@ const User = require('./User.js');
 
 
 //Main Functions
+//For database
 async function addClass(userId, classNum) {
     try {
         const userExists = await checkUser(userId);
