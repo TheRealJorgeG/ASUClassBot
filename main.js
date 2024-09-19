@@ -1,6 +1,7 @@
 const { Client, GatewayIntentBits, PermissionsBitField, Permissions } = require(`discord.js`);
 const { spawn } = require('child_process');
-const { token } = require('./config.json')
+require('dotenv').config();
+const token = process.env.DISCORD_TOKEN;
 const User = require('./User');
 
 const mongoose = require('mongoose');
@@ -25,7 +26,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 const {addClass, removeClass, showClasses} = require('./index')
 
 const cron = require('node-cron');
-cron.schedule('*/30 * * * * *', () => {
+cron.schedule('*/90 * * * * *', () => {
     checkClassAvailability(client).catch(err => console.error(err));
 });
 
