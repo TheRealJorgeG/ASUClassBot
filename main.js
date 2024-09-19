@@ -1,12 +1,12 @@
 const { Client, GatewayIntentBits, PermissionsBitField, Permissions } = require(`discord.js`);
 const { spawn } = require('child_process');
 require('dotenv').config();
-const token = process.env.DISCORD_TOKEN;
 const User = require('./User');
+const token = process.env.DISCORD_TOKEN;
+const uri = process.env.MONGO_URI;
 
 const mongoose = require('mongoose');
 
-const uri = 'mongodb+srv://dbUser:iloveasu2003@cluster0.muyjq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 async function connect() {
     try {
